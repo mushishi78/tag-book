@@ -56,3 +56,9 @@ body {
   text-decoration: none;
   font-size: 13px;
 }
+
+.comments {
+  margin: 25px;
+  padding: 25px;
+  border-top: 1px solid #eee;
+}
