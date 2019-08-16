@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable = no" />
+    <meta charset="UTF-8" />
+    <title>Tag Book</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <script src="/diagrams.js"></script>
+  </head>
+  <body>
+    <a href="/" class="back">Back</a>
+    <div class="heading">
+      <div class="title">Balanced Open 4</div>
+    </div>
+    <div class="diagram"></div>
+    <a href="/key" class="key">Key</a>
+    <script>
+      window.onload = function() {
+        const diagram = document.querySelector(".diagram");
+        const g = createPitch(diagram, 125, 95);
+        addDefender(g, 10, 15, "B1");
+        addDefender(g, 25, 15, "R");
+        addDefender(g, 25, 30, "M");
+        addDefender(g, 40, 15, "O1");
+        addDefender(g, 55, 15, "O2");
+        addDefender(g, 70, 15, "O3");
+        addDefender(g, 85, 15, "O4");
+        addAttacker(g, 10, 55, "B1");
+        addAttacker(g, 25, 38, "BC");
+        addAttacker(g, 25, 46, "DH");
+        addAttacker(g, 40, 55, "O1");
+        addAttacker(g, 55, 65, "O2");
+        addAttacker(g, 70, 75, "O3");
+        addAttacker(g, 85, 85, "O4");
+      };
+    </script>
+  </body>
+</html>

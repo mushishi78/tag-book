@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable = no" />
+    <meta charset="UTF-8" />
+    <title>Tag Book</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <script src="/diagrams.js"></script>
+  </head>
+  <body>
+    <div class="heading">
+      <div class="title">Key</div>
+    </div>
+    <div class="diagram"></div>
+    <script>
+      window.onload = function() {
+        const diagram = document.querySelector(".diagram");
+        const g = createPitch(diagram, 100, 90);
+        addDefender(g, 10, 10, "R");
+        addKeyLabel(g, 16, 10, '"Ruck" defender');
+        addDefender(g, 10, 20, "M");
+        addKeyLabel(g, 16, 20, "Marker");
+        addDefender(g, 10, 30, "O1");
+        addKeyLabel(g, 16, 30, "Open defender (marking 1st open receiver)");
+        addDefender(g, 10, 40, "B1");
+        addKeyLabel(g, 16, 40, "Blind defender (marking 1st blind receiver)");
+
+        addAttacker(g, 10, 50, "BC");
+        addKeyLabel(g, 16, 50, "Ball Carrier");
+        addAttacker(g, 10, 60, "DH");
+        addKeyLabel(g, 16, 60, "Dummy Half");
+        addAttacker(g, 10, 70, "O1");
+        addKeyLabel(g, 16, 70, "Open attacker (1st receiver)");
+        addAttacker(g, 10, 80, "B1");
+        addKeyLabel(g, 16, 80, "Blind attacker (1st receiver)");
+      };
+
+      function addKeyLabel(g, x, y, label) {
+        const text = document.createElementNS(ns, "text");
+        text.setAttribute("x", x);
+        text.setAttribute("y", y);
+        text.setAttribute("font-size", 4);
+        text.setAttribute("fill", "white");
+        text.setAttribute("dominant-baseline", "middle");
+        text.textContent = label;
+        g.appendChild(text);
+      }
+    </script>
+  </body>
+</html>

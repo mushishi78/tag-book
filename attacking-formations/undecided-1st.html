@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable = no" />
+    <meta charset="UTF-8" />
+    <title>Tag Book</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <script src="/diagrams.js"></script>
+  </head>
+  <body>
+    <a href="/" class="back">Back</a>
+    <div class="heading">
+      <div class="title">Undecided 1st</div>
+    </div>
+    <div class="diagram"></div>
+    <a href="/key" class="key">Key</a>
+    <script>
+      window.onload = function() {
+        const diagram = document.querySelector(".diagram");
+        const g = createPitch(diagram, 125, 95);
+        addDefender(g, 10, 15, "B2");
+        addDefender(g, 25, 15, "B1");
+        addDefender(g, 35, 30, "M");
+        addDefender(g, 45, 15, "O1");
+        addDefender(g, 60, 15, "O2");
+        addDefender(g, 75, 15, "O3");
+        addDefender(g, 90, 15, "O4");
+        addAttacker(g, 10, 65, "B2");
+        addAttacker(g, 35, 38, "BC");
+        addAttacker(g, 35, 46, "DH");
+
+        // Arrow left
+        addPolyline(g, "#000", 0.3, "30 60, 25 55, 25 57, 27 55, 25 55");
+
+        addAttacker(g, 35, 65, "?1");
+
+        // Arrow right
+        addPolyline(g, "#000", 0.3, "40 60, 45 55, 45 57, 43 55, 45 55");
+
+        addAttacker(g, 65, 65, "O2");
+        addAttacker(g, 80, 75, "O3");
+        addAttacker(g, 95, 85, "O4");
+      };
+    </script>
+  </body>
+</html>
