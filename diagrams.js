@@ -2,8 +2,7 @@ const ns = "http://www.w3.org/2000/svg";
 
 function createPitch(element, width, height) {
   const svg = document.createElementNS(ns, "svg");
-  svg.setAttribute("width", width + "mm");
-  svg.setAttribute("height", height + "mm");
+  svg.setAttribute("width", "100%");
   svg.setAttribute("version", "1.1");
   svg.setAttribute("viewBox", "0 0 " + width + " " + height);
   element.appendChild(svg);
