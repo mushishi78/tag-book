@@ -12,11 +12,20 @@
     <div class="heading">
       <div class="title">Key</div>
     </div>
-    <div class="diagram"></div>
+    <div class="content">
+      <div class="page" id="page1">
+        <div class="diagram-container">
+          <div class="diagram"></div>
+        </div>
+        <div class="page-buttons">
+          <div onclick="history.back()" class="page-button">Back</div>
+        </div>
+      </div>
+    </div>
     <script>
       window.onload = function() {
         const diagram = document.querySelector(".diagram");
-        const g = createPitch(diagram, 100, 90);
+        const g = createPitch(diagram, 100, 110);
         addDefender(g, 10, 10, "R");
         addKeyLabel(g, 16, 10, '"Ruck" defender');
         addDefender(g, 10, 20, "M");
@@ -25,15 +34,19 @@
         addKeyLabel(g, 16, 30, "Open defender (marking 1st open receiver)");
         addDefender(g, 10, 40, "B1");
         addKeyLabel(g, 16, 40, "Blind defender (marking 1st blind receiver)");
+        addDefender(g, 10, 50, "OS");
+        addKeyLabel(g, 16, 50, "Open sweeper");
+        addDefender(g, 10, 60, "BS");
+        addKeyLabel(g, 16, 60, "Blind sweeper");
 
-        addAttacker(g, 10, 50, "BC");
-        addKeyLabel(g, 16, 50, "Ball Carrier");
-        addAttacker(g, 10, 60, "DH");
-        addKeyLabel(g, 16, 60, "Dummy Half");
-        addAttacker(g, 10, 70, "O1");
-        addKeyLabel(g, 16, 70, "Open attacker (1st receiver)");
-        addAttacker(g, 10, 80, "B1");
-        addKeyLabel(g, 16, 80, "Blind attacker (1st receiver)");
+        addAttacker(g, 10, 70, "BC");
+        addKeyLabel(g, 16, 70, "Ball Carrier");
+        addAttacker(g, 10, 80, "DH");
+        addKeyLabel(g, 16, 80, "Dummy Half");
+        addAttacker(g, 10, 90, "O1");
+        addKeyLabel(g, 16, 90, "Open attacker (1st receiver)");
+        addAttacker(g, 10, 100, "B1");
+        addKeyLabel(g, 16, 100, "Blind attacker (1st receiver)");
       };
 
       function addKeyLabel(g, x, y, label) {

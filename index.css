@@ -19,6 +19,7 @@ body {
 .content {
   overflow: auto;
   flex-grow: 1;
+  padding-bottom: 100px;
 }
 
 .title {
@@ -49,6 +50,11 @@ body {
   font-size: 18px;
 }
 
+.diagram-container {
+  max-width: 500px;
+  margin: auto;
+}
+
 .diagram {
   width: 100%;
   overflow: auto;
@@ -56,14 +62,15 @@ body {
 
 .key {
   display: block;
-  color: #4848b7;
-  margin: 0 25px 25px;
+  color: #3a3a3a;
+  margin: 5px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
+  text-align: right;
 }
 
 .comments {
-  margin: 25px 25px 100px;
+  margin: 25px;
   padding: 25px;
   border-top: 100px solid #eee;
 }
