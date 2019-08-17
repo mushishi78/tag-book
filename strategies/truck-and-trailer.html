@@ -31,6 +31,9 @@
         </div>
       </div>
       <div class="page" id="page2">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram1"></div>
+        </div>
         <div class="page-paragaph">
           Here is an example breakdown, where A has been previously tagged. B is
           the dummy half (going to pick up the ball) and is going to pass to C
@@ -39,7 +42,7 @@
         <div class="page-paragaph">
           At this point, C initiates the strategy by conferring with D. Between
           them they devise that C will be the “Truck” and D will be the
-          “Trailer”.
+          “Trailer”. D moves to stand behind C.
         </div>
         <div class="page-buttons">
           <div onclick="togglePage('page1')" class="page-button">Previous</div>
@@ -47,6 +50,9 @@
         </div>
       </div>
       <div class="page" id="page3">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram2"></div>
+        </div>
         <div class="page-paragaph">
           The “Truck” will call for a short ball from the dummy half (B) and
           will try to time their run so they are running when they receive the
@@ -63,6 +69,9 @@
         </div>
       </div>
       <div class="page" id="page4">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram3"></div>
+        </div>
         <div class="page-paragaph">
           Approaching the defensive line, the truck must been seen to be making
           some attempt to evade the defender, or else they might penalized for
@@ -74,6 +83,9 @@
         </div>
       </div>
       <div class="page" id="page5">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram4"></div>
+        </div>
         <div class="page-paragaph">
           When the truck gets tagged, the key is speed. No over-running thinking
           you may not have been tagged! The moment you are sure that you’ve been
@@ -121,6 +133,65 @@
     <script>
       window.onload = function() {
         togglePage("page1");
+
+        const diagram1 = document.querySelector("#diagram1");
+        const g1 = createPitch(diagram1, 75, 85);
+        addDefender(g1, 10, 15, "");
+        addDefender(g1, 10, 30, "");
+        addDefender(g1, 35, 15, "");
+        addDefender(g1, 60, 15, "");
+        addBall(g1, 10, 35);
+        addAttacker(g1, 10, 40, "A");
+        addAttacker(g1, 10, 48, "B");
+        addAttacker(g1, 35, 60, "C");
+        addAttacker(g1, 60, 75, "D");
+        addArrow(g1, 55, 75, 20, 90);
+
+        const diagram2 = document.querySelector("#diagram2");
+        const g2 = createPitch(diagram2, 75, 85);
+        addDefender(g2, 12, 17, "");
+        addDefender(g2, 9, 30, "");
+        addDefender(g2, 35, 17, "");
+        addDefender(g2, 60, 17, "");
+        addBall(g2, 28, 49);
+        addAttacker(g2, 10, 40, "A");
+        addAttacker(g2, 10, 48, "B");
+        addArrow(g2, 35, 52, 7, 180);
+        addAttacker(g2, 35, 55, "C");
+        addArrow(g2, 35, 67, 7, 180);
+        addAttacker(g2, 35, 70, "D");
+
+        const diagram3 = document.querySelector("#diagram3");
+        const g3 = createPitch(diagram3, 75, 85);
+        addDefender(g3, 18, 22, "");
+        addDefender(g3, 7, 26, "");
+        addDefender(g3, 35, 22, "");
+        addDefender(g3, 60, 22, "");
+        addAttacker(g3, 6, 50, "A");
+        addArrow(g3, 8, 54, 20, 325);
+        addAttacker(g3, 18, 55, "B");
+        addArrow(g3, 20, 59, 7, 330);
+        addBall(g3, 41, 25);
+        addAttacker(g3, 40, 30, "C");
+        addArrow(g3, 39, 46, 7, 185);
+        addAttacker(g3, 38, 50, "D");
+
+        const diagram4 = document.querySelector("#diagram4");
+        const g4 = createPitch(diagram4, 75, 85);
+        addArrow(g4, 29, 12, 7, 210);
+        addDefender(g4, 27, 15, "");
+        addArrow(g4, 10, 11, 7, 180);
+        addDefender(g4, 10, 15, "");
+        addDefender(g4, 37, 22, "");
+        addArrow(g4, 60, 11, 7, 180);
+        addDefender(g4, 60, 15, "");
+        addAttacker(g4, 25, 75, "A");
+        addArrow(g4, 25, 61, 10, 180);
+        addArrow(g4, 27, 63, 10, 250);
+        addAttacker(g4, 25, 65, "B");
+        addAttacker(g4, 37, 30, "C");
+        addBall(g4, 37, 35);
+        addAttacker(g4, 37, 40, "D");
       };
     </script>
     <script src="https://cdn.commento.io/js/commento.js"></script>

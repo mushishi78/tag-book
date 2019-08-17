@@ -64,3 +64,33 @@ function addPolyline(g, stroke, strokeWidth, points) {
   polyline.setAttribute("stroke-width", strokeWidth);
   g.appendChild(polyline);
 }
+
+function addArrow(g, x, y, length, angle) {
+  const points = [
+    [x, y],
+    [x, y + length],
+    [x + 1, y + length - 2],
+    [x - 1, y + length - 2],
+    [x, y + length]
+  ]
+    .map(function(pair) {
+      return pair.join(" ");
+    })
+    .join(",");
+
+  const polyline = document.createElementNS(ns, "polyline");
+  polyline.setAttribute("points", points);
+  polyline.setAttribute("stroke", "#000");
+  polyline.setAttribute("stroke-width", 0.3);
+  polyline.setAttribute("transform", "rotate(" + [angle, x, y].join(",") + ")");
+  g.appendChild(polyline);
+}
+
+function addBall(g, x, y) {
+  const circ = document.createElementNS(ns, "circle");
+  circ.setAttribute("cx", x);
+  circ.setAttribute("cy", y);
+  circ.setAttribute("r", 1);
+  circ.setAttribute("fill", "#FFF");
+  g.appendChild(circ);
+}

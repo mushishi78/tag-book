@@ -52,7 +52,7 @@ body {
 
 .diagram-container {
   max-width: 500px;
-  margin: auto;
+  margin: 0 auto 10px;
 }
 
 .diagram {
