@@ -13,6 +13,118 @@
     <div class="heading">
       <div class="title">Truck and Trailer</div>
     </div>
+    <div class="page" id="page1">
+      <div class="page-paragaph">
+        The truck and trailer strategy is an attacking strategy that involves
+        pre-defining roles at the breakdown in order to speed up the time taken
+        to execute a roll ball. As each roll ball requires the defense to get
+        back 7m, a faster roll ball can leave defenders still running backward,
+        or even left offside, when the next phase begins. Continuously pushing
+        the defence to have to recover quickly over a series of phases can
+        safely win yards, ease the pressure from an aggressive defence and draw
+        defenders into the center.
+      </div>
+      <div class="page-buttons">
+        <div onclick="toggle('page2')" class="page-next">Next</div>
+      </div>
+    </div>
+    <div class="page" id="page2">
+      <div class="page-paragaph">
+        Here is an example breakdown, where A has been previously tagged. B is
+        the dummy half (going to pick up the ball) and is going to pass to C as
+        first receiver, with D outside them.
+      </div>
+      <div class="page-paragaph">
+        At this point, C initiates the strategy by conferring with D. Between
+        them they devise that C will be the “Truck” and D will be the “Trailer”.
+      </div>
+      <div class="page-buttons">
+        <div onclick="toggle('page1')" class="page-previous">Previous</div>
+        <div onclick="toggle('page3')" class="page-next">Next</div>
+      </div>
+    </div>
+    <div class="page" id="page3">
+      <div class="page-paragaph">
+        The “Truck” will call for a short ball from the dummy half (B) and will
+        try to time their run so they are running when they receive the ball.
+        Their aim is to make a decent amount of yards and engage the defence,
+        but they are not actively trying to break the line.
+      </div>
+      <div class="page-paragaph">
+        The “Trailer” will follow a few yards behind, ready to pick up the ball
+        once the truck has been tagged.
+      </div>
+      <div class="page-buttons">
+        <div onclick="toggle('page2')" class="page-previous">Previous</div>
+        <div onclick="toggle('page4')" class="page-next">Next</div>
+      </div>
+    </div>
+    <div class="page" id="page4">
+      <div class="page-paragaph">
+        Approaching the defensive line, the truck must been seen to be making
+        some attempt to evade the defender, or else they might penalized for
+        surrendering.
+      </div>
+      <div class="page-buttons">
+        <div onclick="toggle('page3')" class="page-previous">Previous</div>
+        <div onclick="toggle('page5')" class="page-next">Next</div>
+      </div>
+    </div>
+    <div class="page" id="page5">
+      <div class="page-paragaph">
+        When the truck gets tagged, the key is speed. No over-running thinking
+        you may not have been tagged! The moment you are sure that you’ve been
+        tagged, put the ball between your legs and trust that your trusty
+        trailer is ready and waiting.
+      </div>
+      <div class="page-paragaph">
+        Whilst the first “pod” (C and D), are doing the first phase of truck and
+        trailer. The second “pod” (A and B) have had enough time to confer about
+        whether they wish to continue truck and trailering. If they do, B (the
+        previous dummy half) is typically in the best position to take the ball
+        as truck. They should call clearly which side they wish to attack, as
+        they should be able to attack either side. They need to time their run
+        carefully; whilst being fast is good, it’s easy to overrun the dummy
+        half (D) if they’re not quite ready to pass yet.
+      </div>
+      <div class="page-buttons">
+        <div onclick="toggle('page4')" class="page-previous">Previous</div>
+        <div onclick="toggle('page6')" class="page-next">Next</div>
+      </div>
+    </div>
+    <div class="page" id="page6">
+      <div class="page-paragaph">
+        This strategy can be continued for 3 or 4 phases if desired, with the
+        same 2 pods circulating. I imagine it can make a fairly easy training
+        exercise to just run 4 attacking players up the pitch, going back and
+        forth between the 2 pods until they are used to this enough to commit to
+        it in a game.
+      </div>
+      <div class="page-paragaph">
+        Typically this strategy would be more useful when in our own half where
+        we don’t want to do anything particularly risky. Or when it’s wet and we
+        can’t really make very many wide passes. It’s not intended to be used
+        all the time, just a tool to have. As such, it’s imperative to have
+        clear communication so that everyone knows what’s happening. Lots of
+        shouting!
+      </div>
+      <div class="page-buttons">
+        <div onclick="toggle('page5')" class="page-previous">Previous</div>
+      </div>
+    </div>
+    <div class="comments"><div id="commento"></div></div>
+    <script>
+      window.onload = function() {
+        toggle("page1");
+      };
+
+      function toggle(pageId) {
+        const pages = document.getElementsByClassName("page");
+        for (let i = 0; i < pages.length; i++) {
+          pages[i].style.display = pages[i].id === pageId ? "block" : "none";
+        }
+      }
+    </script>
     <script src="https://cdn.commento.io/js/commento.js"></script>
   </body>
 </html>

@@ -62,3 +62,29 @@ body {
   padding: 25px;
   border-top: 1px solid #eee;
 }
+
+.page {
+  margin: 25px;
+}
+
+.page-paragaph {
+  margin-bottom: 10px;
+  line-height: 1.4;
+  font-size: 17px;
+}
+
+.page-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px 0;
+}
+
+.page-previous,
+.page-next {
+  cursor: pointer;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #666;
+  min-width: 25vw;
+  text-align: center;
+}
