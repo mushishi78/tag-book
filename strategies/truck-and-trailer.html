@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/tag-book/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/tag-book/index.css" />
     <script src="/tag-book/diagrams.js"></script>
+    <script src="/tag-book/page.js"></script>
   </head>
   <body>
     <div class="heading">
@@ -26,7 +27,7 @@
         </div>
         <div class="page-buttons">
           <a href="/tag-book/" class="page-button">Home</a>
-          <div onclick="toggle('page2')" class="page-button">Next</div>
+          <div onclick="togglePage('page2')" class="page-button">Next</div>
         </div>
       </div>
       <div class="page" id="page2">
@@ -41,8 +42,8 @@
           “Trailer”.
         </div>
         <div class="page-buttons">
-          <div onclick="toggle('page1')" class="page-button">Previous</div>
-          <div onclick="toggle('page3')" class="page-button">Next</div>
+          <div onclick="togglePage('page1')" class="page-button">Previous</div>
+          <div onclick="togglePage('page3')" class="page-button">Next</div>
         </div>
       </div>
       <div class="page" id="page3">
@@ -57,8 +58,8 @@
           ball once the truck has been tagged.
         </div>
         <div class="page-buttons">
-          <div onclick="toggle('page2')" class="page-button">Previous</div>
-          <div onclick="toggle('page4')" class="page-button">Next</div>
+          <div onclick="togglePage('page2')" class="page-button">Previous</div>
+          <div onclick="togglePage('page4')" class="page-button">Next</div>
         </div>
       </div>
       <div class="page" id="page4">
@@ -68,8 +69,8 @@
           surrendering.
         </div>
         <div class="page-buttons">
-          <div onclick="toggle('page3')" class="page-button">Previous</div>
-          <div onclick="toggle('page5')" class="page-button">Next</div>
+          <div onclick="togglePage('page3')" class="page-button">Previous</div>
+          <div onclick="togglePage('page5')" class="page-button">Next</div>
         </div>
       </div>
       <div class="page" id="page5">
@@ -90,8 +91,8 @@
           overrun the dummy half (D) if they’re not quite ready to pass yet.
         </div>
         <div class="page-buttons">
-          <div onclick="toggle('page4')" class="page-button">Previous</div>
-          <div onclick="toggle('page6')" class="page-button">Next</div>
+          <div onclick="togglePage('page4')" class="page-button">Previous</div>
+          <div onclick="togglePage('page6')" class="page-button">Next</div>
         </div>
       </div>
       <div class="page" id="page6">
@@ -111,7 +112,7 @@
           Lots of shouting!
         </div>
         <div class="page-buttons">
-          <div onclick="toggle('page5')" class="page-button">Previous</div>
+          <div onclick="togglePage('page5')" class="page-button">Previous</div>
           <a href="/tag-book/" class="page-button">Home</a>
         </div>
       </div>
@@ -119,15 +120,8 @@
     </div>
     <script>
       window.onload = function() {
-        toggle("page1");
+        togglePage("page1");
       };
-
-      function toggle(pageId) {
-        const pages = document.getElementsByClassName("page");
-        for (let i = 0; i < pages.length; i++) {
-          pages[i].style.display = pages[i].id === pageId ? "block" : "none";
-        }
-      }
     </script>
     <script src="https://cdn.commento.io/js/commento.js"></script>
   </body>
