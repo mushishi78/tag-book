@@ -9,13 +9,19 @@
     <script src="/tag-book/diagrams.js"></script>
   </head>
   <body>
-    <a href="/tag-book/" class="back">Back</a>
     <div class="heading">
       <div class="title">Balanced Open 4</div>
     </div>
-    <div class="diagram"></div>
-    <a href="/tag-book/key" class="key">Key</a>
-    <div class="comments"><div id="commento"></div></div>
+    <div class="content">
+        <div class="page" id="page1">
+      <div class="diagram"></div>
+        <a href="/tag-book/key" class="key">Key</a>
+        <div class="page-buttons">
+          <a href="/tag-book/" class="page-button">Home</a>
+        </div>
+      </div>
+      <div class="comments"><div id="commento"></div></div>
+    </div>
     <script>
       window.onload = function() {
         const diagram = document.querySelector(".diagram");

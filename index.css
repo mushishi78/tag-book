@@ -1,11 +1,24 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading {
   padding: 10px 5px;
-  margin: 15px 20px 0px;
+  margin: 15px 20px;
   border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.content {
+  overflow: auto;
+  flex-grow: 1;
 }
 
 .title {
@@ -36,16 +49,8 @@ body {
   font-size: 18px;
 }
 
-.back {
-  display: block;
-  color: #4848b7;
-  margin: 15px 25px 0;
-  text-decoration: none;
-}
-
 .diagram {
-  margin: 25px;
-  width: calc(100% - 50px);
+  width: 100%;
   overflow: auto;
 }
 
@@ -58,13 +63,13 @@ body {
 }
 
 .comments {
-  margin: 25px;
+  margin: 25px 25px 100px;
   padding: 25px;
-  border-top: 1px solid #eee;
+  border-top: 100px solid #eee;
 }
 
 .page {
-  margin: 25px;
+  margin: 0 25px 25px;
 }
 
 .page-paragaph {
@@ -76,15 +81,25 @@ body {
 .page-buttons {
   display: flex;
   justify-content: space-evenly;
-  margin: 25px 0;
+  padding: 5px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #a09fb3;
+  z-index: 2;
+  width: 100%;
+  border-top: 1px solid #eee;
 }
 
-.page-previous,
-.page-next {
+.page-button {
   cursor: pointer;
-  padding: 10px;
+  padding: 20px 0;
   background: #f9f9f9;
   border: 1px solid #666;
   min-width: 25vw;
   text-align: center;
+  border-radius: 4px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
 }
