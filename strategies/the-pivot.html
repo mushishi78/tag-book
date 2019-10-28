@@ -13,6 +13,222 @@
     <div class="heading">
       <div class="title">The Pivot</div>
     </div>
+    <div class="content">
+      <div class="page" id="page1">
+        <div class="page-paragaph">
+          The Pivot is a strategy used to test how well a defensive line stays
+          in formation after the ball has passed. The idea is to pass the ball
+          all the way down the line to the wing, then the pivot player gives the
+          wing an option to pass it back in the direction it came so that the
+          ball can be passed down the line again in the opposite direction.
+        </div>
+        <div class="page-buttons">
+          <a href="/tag-book/" class="page-button">Home</a>
+          <div onclick="togglePage('page2')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page2">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram1"></div>
+        </div>
+        <div class="page-paragaph">
+          The third from last player on the open side is always the "Pivot"
+          player. To initiate they call "Pivot right!" if the right hand side is
+          the open side, or "Pivot left!" if the left hand side is the open
+          side.
+        </div>
+        <div class="page-paragaph">
+          To effectively execute the pivot play, the attacking line must be
+          aware they need to get back into an attacking position after passing
+          the ball, so communication is invaluable. So after hearing the Pivot's
+          call, the other's should then echo the call, or call "cancel" if they
+          disagree strongly.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page1')" class="page-button">Previous</div>
+          <div onclick="togglePage('page3')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page3">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram2"></div>
+        </div>
+        <div class="page-paragaph">
+          Once play has started, pass the ball down the line to the wing, trying
+          to get the ball away as soon as possible to make sure it makes it.
+          After passing, players should try to get back into a position ready to
+          attack the other direction.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page2')" class="page-button">Previous</div>
+          <div onclick="togglePage('page4')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page4">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram3"></div>
+        </div>
+        <div class="page-paragaph">
+          When approaching the end of the line, the "Pivot" must race back to
+          make a deep inside pass back from the wing possible. The player next
+          to the wing will stay up infront of play because they do not have
+          enough time to both give the wing the pass and get back.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page3')" class="page-button">Previous</div>
+          <div onclick="togglePage('page5')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page5">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram4"></div>
+        </div>
+        <div class="page-paragaph">
+          The wing should run toward the line on the outside of their opposing
+          player but try not to get too isolated from the supporting pivot
+          player.
+        </div>
+        <div class="page-paragaph">
+          The pivot player should call to receive the ball and be ready to run
+          onto it going the opposite direction.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page4')" class="page-button">Previous</div>
+          <div onclick="togglePage('page6')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page6">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram5"></div>
+        </div>
+        <div class="page-paragaph">
+          Once the pivot has been passed the ball, they need to work hard to get
+          back across to connect with their line. Their could be a few
+          opposition player up forward because they've broken their line. These
+          are the gaps that should be exploited but can also leave the pivot
+          player isolated if they can't make it back to their supporting
+          players.
+        </div>
+        <div class="page-paragaph">
+          Once connected, the ball should be passed along the new lines and any
+          gaps in their defense exploited.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page5')" class="page-button">Previous</div>
+          <a href="/tag-book/" class="page-button">Home</a>
+        </div>
+      </div>
+      <div class="comments"><div id="commento"></div></div>
+    </div>
+    <script>
+      window.onload = function() {
+        togglePage("page1");
+
+        const diagram1 = document.querySelector("#diagram1");
+        const g1 = createPitch(diagram1, 125, 95);
+        addDefender(g1, 10, 15, "B1");
+        addDefender(g1, 25, 15, "R");
+        addDefender(g1, 25, 30, "M");
+        addDefender(g1, 40, 15, "O1");
+        addDefender(g1, 55, 15, "O2");
+        addDefender(g1, 70, 15, "O3");
+        addDefender(g1, 85, 15, "O4");
+        addAttacker(g1, 10, 55, "B1");
+        addAttacker(g1, 25, 38, "BC");
+        addBall(g1, 25, 43);
+        addAttacker(g1, 25, 48, "DH");
+        addAttacker(g1, 40, 57, "O1");
+        addAttacker(g1, 55, 67, "PV");
+        addArrow(g1, 48, 74, 5, 225);
+        addArrow(g1, 62, 74, 5, 135);
+        addArrow(g1, 48, 60, 5, 315);
+        addArrow(g1, 62, 60, 5, 45);
+        addAttacker(g1, 70, 77, "O3");
+        addAttacker(g1, 85, 87, "WG");
+
+        const diagram2 = document.querySelector("#diagram2");
+        const g2 = createPitch(diagram2, 125, 95);
+        addDefender(g2, 10, 25, "B1");
+        addDefender(g2, 35, 25, "R");
+        addDefender(g2, 25, 30, "M");
+        addDefender(g2, 52, 25, "O1");
+        addDefender(g2, 65, 24, "O2");
+        addDefender(g2, 80, 23, "O3");
+        addDefender(g2, 95, 22, "O4");
+        addAttacker(g2, 10, 60, "B1");
+        addAttacker(g2, 22, 43, "BC");
+        addArrow(g2, 23, 47, 10, 340);
+        addAttacker(g2, 33, 50, "DH");
+        addArrow(g2, 34, 54, 7, 300);
+        addAttacker(g2, 45, 40, "O1");
+        addArrow(g2, 46, 44, 10, 325);
+        addAttacker(g2, 60, 45, "PV");
+        addBall(g2, 60, 40);
+        addAttacker(g2, 75, 55, "O3");
+        addArrow(g2, 76, 51, 15, 195);
+        addAttacker(g2, 90, 65, "WG");
+        addArrow(g2, 91, 61, 15, 200);
+
+        const diagram3 = document.querySelector("#diagram3");
+        const g3 = createPitch(diagram3, 125, 95);
+        addDefender(g3, 10, 25, "B1");
+        addDefender(g3, 37, 26, "R");
+        addDefender(g3, 23, 26, "M");
+        addDefender(g3, 65, 29, "O1");
+        addDefender(g3, 78, 27, "O2");
+        addDefender(g3, 92, 25, "O3");
+        addDefender(g3, 105, 24, "O4");
+        addAttacker(g3, 10, 65, "B1");
+        addAttacker(g3, 30, 60, "BC");
+        addAttacker(g3, 45, 55, "DH");
+        addAttacker(g3, 55, 50, "O1");
+        addAttacker(g3, 70, 50, "PV");
+        addArrow(g3, 74, 52, 20, 280);
+        addAttacker(g3, 80, 40, "O3");
+        addBall(g3, 80, 35);
+        addAttacker(g3, 95, 48, "WG");
+        addArrow(g3, 97, 44, 10, 215);
+
+        const diagram4 = document.querySelector("#diagram4");
+        const g4 = createPitch(diagram4, 125, 95);
+        addDefender(g4, 10, 25, "B1");
+        addDefender(g4, 37, 26, "R");
+        addDefender(g4, 23, 26, "M");
+        addDefender(g4, 75, 29, "O1");
+        addDefender(g4, 88, 27, "O2");
+        addDefender(g4, 97, 26, "O3");
+        addDefender(g4, 111, 26, "O4");
+        addAttacker(g4, 20, 70, "B1");
+        addAttacker(g4, 35, 65, "BC");
+        addAttacker(g4, 50, 60, "DH");
+        addAttacker(g4, 70, 55, "O1");
+        addAttacker(g4, 110, 55, "PV");
+        addArrow(g4, 106, 53, 20, 115);
+        addAttacker(g4, 98, 33, "O3");
+        addAttacker(g4, 113, 40, "WG");
+        addBall(g4, 114, 36);
+        addArrow(g4, 116, 38, 5, 215);
+
+        const diagram5 = document.querySelector("#diagram5");
+        const g5 = createPitch(diagram5, 125, 95);
+        addDefender(g5, 10, 25, "B1");
+        addDefender(g5, 43, 28, "R");
+        addDefender(g5, 26, 27, "M");
+        addDefender(g5, 80, 36, "O1");
+        addDefender(g5, 90, 32, "O2");
+        addDefender(g5, 103, 26, "O3");
+        addDefender(g5, 115, 27, "O4");
+        addAttacker(g5, 20, 70, "B1");
+        addAttacker(g5, 35, 65, "BC");
+        addAttacker(g5, 53, 55, "DH");
+        addArrow(g5, 53, 51, 20, 190);
+        addAttacker(g5, 70, 52, "O1");
+        addAttacker(g5, 93, 48, "PV");
+        addBall(g5, 89, 44);
+        addAttacker(g5, 105, 34, "O3");
+        addAttacker(g5, 118, 35, "WG");
+      };
+    </script>
     <script src="https://cdn.commento.io/js/commento.js"></script>
   </body>
 </html>
