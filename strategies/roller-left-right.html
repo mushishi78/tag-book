@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable = no" />
+    <meta charset="UTF-8" />
+    <title>Tag Book</title>
+    <link rel="stylesheet" type="text/css" href="/tag-book/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/tag-book/index.css" />
+    <script src="/tag-book/diagrams.js"></script>
+    <script src="/tag-book/page.js"></script>
+  </head>
+  <body>
+    <div class="heading">
+      <div class="title">Roller Left/Right</div>
+    </div>
+    <div class="content">
+      <div class="page" id="page1">
+        <div class="page-paragaph">
+          This play is a simple move at the breakdown to get the "roller" (the
+          player who kicks the ball back between their legs) back into the game
+          and to get past the marker to attack directly behind where the
+          breakdown is set.
+        </div>
+        <div class="page-buttons">
+          <a href="/tag-book/" class="page-button">Home</a>
+          <div onclick="togglePage('page2')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page2">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram1"></div>
+        </div>
+        <div class="page-paragaph">
+          In this example breakdown, the "roller" is ready to kick the ball
+          back, the defensive "marker" is opposite them and the "dummy half" is
+          behind in position to take the ball from the ground.
+        </div>
+        <div class="page-paragaph">
+          To initiate the play, the dummy half should call to the roller either
+          "Roller left!" or "Roller right!" depending on which direction they'd
+          like the roller to go. The roller should respond to confirm that
+          they've understood, "alright".
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page1')" class="page-button">Previous</div>
+          <div onclick="togglePage('page3')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page3">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram2"></div>
+        </div>
+        <div class="page-paragaph">
+          Once the dummy half has taken the ball, they should take a step in the
+          opposite direction from what they've told the roller to do. So if
+          they've called "Roller right!", they should go left, and visa versa.
+        </div>
+        <div class="page-paragaph">
+          Meanwhile, the roller should step back and toward the direction they
+          were called. They should be trying to give the dummy half an option to
+          pass as soon as possible. If they are too slow, the dummy half could
+          be tagged by the defensive marker.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page2')" class="page-button">Previous</div>
+          <div onclick="togglePage('page4')" class="page-button">Next</div>
+        </div>
+      </div>
+      <div class="page" id="page4">
+        <div class="diagram-container">
+          <div class="diagram" id="diagram3"></div>
+        </div>
+        <div class="page-paragaph">
+          The dummy half should then make the decision to pass to the roller or
+          to dummy based on whether they think the marker is coming toward them
+          or the roller.
+        </div>
+        <div class="page-buttons">
+          <div onclick="togglePage('page3')" class="page-button">Previous</div>
+          <a href="/tag-book/" class="page-button">Home</a>
+        </div>
+      </div>
+      <div class="comments"><div id="commento"></div></div>
+    </div>
+    <script>
+      window.onload = function() {
+        togglePage("page1");
+
+        const diagram1 = document.querySelector("#diagram1");
+        const g1 = createPitch(diagram1, 70, 75);
+        addDefender(g1, 10, 10, "B1");
+        addDefender(g1, 35, 10, "Ru");
+        addDefender(g1, 35, 30, "M");
+        addDefender(g1, 60, 10, "O1");
+        addAttacker(g1, 10, 65, "B1");
+        addBall(g1, 35, 35);
+        addAttacker(g1, 35, 40, "Ro");
+        addAttacker(g1, 35, 48, "DH");
+        addAttacker(g1, 60, 65, "O1");
+
+        const diagram2 = document.querySelector("#diagram2");
+        const g2 = createPitch(diagram2, 70, 75);
+        addDefender(g2, 10, 10, "B1");
+        addDefender(g2, 35, 10, "Ru");
+        addDefender(g2, 38, 31, "M");
+        addDefender(g2, 60, 10, "O1");
+        addAttacker(g2, 10, 65, "B1");
+        addAttacker(g2, 30, 43, "Ro");
+        addArrow(g2, 28, 46, 7, 30);
+        addBall(g2, 41, 45);
+        addAttacker(g2, 40, 50, "DH");
+        addArrow(g2, 44, 50, 7, 270);
+        addAttacker(g2, 60, 65, "O1");
+
+        const diagram3 = document.querySelector("#diagram3");
+        const g3 = createPitch(diagram3, 70, 75);
+        addDefender(g3, 10, 11, "B1");
+        addDefender(g3, 35, 11, "Ru");
+        addDefender(g3, 40, 33, "M");
+        addDefender(g3, 60, 11, "O1");
+        addAttacker(g3, 10, 65, "B1");
+        addAttacker(g3, 25, 50, "Ro");
+        addArrow(g3, 25, 46, 15, 180);
+        addBall(g3, 45, 43);
+        addAttacker(g3, 45, 48, "DH");
+        addArrow(g3, 47, 45, 15, 195);
+        addAttacker(g3, 60, 65, "O1");
+      };
+    </script>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+  </body>
+</html>
