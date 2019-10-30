@@ -77,9 +77,35 @@ body {
 
 .comments::before {
   content: " ";
-  border-top: 100px solid #eee;
+  height: 75px;
   display: block;
-  padding-bottom: 25px;
+  margin-bottom: 25px;
+  background: linear-gradient(
+      135deg,
+      #708090 21px,
+      #d9ecff 22px,
+      #d9ecff 24px,
+      transparent 24px,
+      transparent 67px,
+      #d9ecff 67px,
+      #d9ecff 69px,
+      transparent 69px
+    ),
+    linear-gradient(
+        225deg,
+        #708090 21px,
+        #d9ecff 22px,
+        #d9ecff 24px,
+        transparent 24px,
+        transparent 67px,
+        #d9ecff 67px,
+        #d9ecff 69px,
+        transparent 69px
+      )
+      0 64px;
+  background-color: #708090;
+  background-size: 64px 128px;
+  opacity: 0.1;
 }
 
 .page {
